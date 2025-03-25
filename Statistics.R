@@ -62,13 +62,12 @@ KW_results
 
 # Extract relevant information and combine into a data frame
 results_df <- map_dfr(KW_results, function(res) {
-  # Extract details from the Kruskal test and effect size
   tibble(
-    variable = res$variable,                             # Variable name
-    statistic = round(res$kruskal$statistic,3),          # Kruskal-Wallis statistic
-    p_value = round(res$kruskal$p, 3),                   # Rounded p-value
-    effect_size = round(res$effect_size$effsize,3),      # Effect size
-    magnitude = res$effect_size$magnitude                # Effect size magnitude
+    variable = res$variable,                             
+    statistic = round(res$kruskal$statistic,3),          
+    p_value = round(res$kruskal$p, 3),                   
+    effect_size = round(res$effect_size$effsize,3),      
+    magnitude = res$effect_size$magnitude                
   )
 })
 
