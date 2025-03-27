@@ -35,12 +35,12 @@ p2 <- ggplot(df, aes(x = cefl_level, y = llamaChinese7b, fill = cefl_level)) +
   geom_boxplot(alpha = 0.7) +
   stat_compare_means(
     comparisons = list(c("A2", "B1"), c("B1", "B2"), c("B2", "C1"),
-                       c("A2", "B2"), c("B1", "C1"), c("A2", "C1")), # 成对比较
+                       c("A2", "B2"), c("B1", "C1"), c("A2", "C1")),
     method = "wilcox.test", label = "p.signif") +
   labs(title = "Mean Surprisal (Chinese-LLaMA)",x = "CEFL Level", y = NULL) +
   theme_minimal()+
   theme(panel.background = element_rect(fill = "white", colour = "grey50"),
-        legend.position = "none", # 隐藏图例
+        legend.position = "none", 
         plot.title = element_text(size = 11)) 
 p2
 
@@ -49,12 +49,12 @@ p3 <- ggplot(df, aes(x = cefl_level, y = taiwanllm7b, fill = cefl_level)) +
   geom_boxplot(alpha = 0.7) +
   stat_compare_means(
     comparisons = list(c("A2", "B1"), c("B1", "B2"), c("B2", "C1"),
-                       c("A2", "B2"), c("B1", "C1"), c("A2", "C1")), # 成对比较
+                       c("A2", "B2"), c("B1", "C1"), c("A2", "C1")),
     method = "wilcox.test", label = "p.signif") +
   labs(title = "Mean Surprisal (Taiwan-LLM)",x = "CEFL Level", y = NULL) +
   theme_minimal()+
   theme(panel.background = element_rect(fill = "white", colour = "grey50"),
-        legend.position = "none", # 
+        legend.position = "none", 
         plot.title = element_text(size = 11))  
 p3
 
